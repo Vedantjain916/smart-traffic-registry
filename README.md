@@ -2,6 +2,8 @@
 
 A real-time vehicle classification system using audio analysis with IoT integration. Built with Flask, React, and XGBoost.
 
+![Smart Traffic Registry Dashboard](assets/dashboard-screenshot.png)
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
