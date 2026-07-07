@@ -123,20 +123,24 @@ plot_path = os.path.join(MODEL_DIR, "confusion_matrix.png")
 plt.savefig(plot_path)
 print(f"✅ Saved confusion matrix plot to: {plot_path}")
 
-# 10. Save Model, Encoder, and Scaler
-print("\n💾 Saving Model, Scaler, and Label Encoder...")
+# 10. Save Model, Encoder, Scaler, and Feature Names
+print("\n💾 Saving Model, Scaler, Label Encoder, and Feature Names...")
 model_path = os.path.join(MODEL_DIR, "vehicle_classifier_xgb.json")
 scaler_path = os.path.join(MODEL_DIR, "scaler.pkl")
 encoder_path = os.path.join(MODEL_DIR, "label_encoder.pkl")
+feature_names_path = os.path.join(MODEL_DIR, "feature_names.pkl")
 
 best_model.save_model(model_path)
 with open(scaler_path, 'wb') as f:
     pickle.dump(scaler, f)
 with open(encoder_path, 'wb') as f:
     pickle.dump(encoder, f)
+with open(feature_names_path, 'wb') as f:
+    pickle.dump(X.columns.tolist(), f)
 print(f"✅ Saved model to: {model_path}")
 print(f"✅ Saved scaler to: {scaler_path}")
 print(f"✅ Saved label encoder to: {encoder_path}")
+print(f"✅ Saved feature names to: {feature_names_path}")
 
 # 11. Feature Importance
 print("\n===============================================")

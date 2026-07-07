@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import scipy.signal
 import os
-from model_loader import get_yamnet, get_xgb, get_encoder, get_scaler
+from model_loader import get_yamnet, get_xgb, get_encoder, get_scaler, get_feature_names
 
 def extract_all_features(audio_path):
     """
@@ -89,6 +89,7 @@ def process_audio_prediction(file_path):
     xgb_model = get_xgb()
     encoder = get_encoder()
     scaler = get_scaler()
+    feature_names = get_feature_names()
 
     try:
         # Check if it's a raw audio file
@@ -112,7 +113,7 @@ def process_audio_prediction(file_path):
         
         # 5. Model Inference
         # Force the dataframe to have the exact column order the XGBoost model expects
-        df_features = pd.DataFrame([features])[list(xgb_model.feature_names_in_)]
+        df_features = pd.DataFrame([features])[feature_names]
         
         # Apply scaling
         df_features_scaled = scaler.transform(df_features)
