@@ -44,12 +44,11 @@ frontend/dist/
 
 # Data files (large files, not to be committed)
 raw_data/
-processed/wav_audio/
-processed/audio_features/
-processed/vibration_features/
-processed/datasets/final_audio_dataset.csv
-processed/datasets/final_audio_dataset.zip
+processed/
 *.zip
+
+# Test audio
+backend/test_audio.raw
 
 # Uploads
 backend/uploads/*
@@ -59,10 +58,8 @@ backend/uploads/*
 .DS_Store
 Thumbs.db
 
-# Models (if large)
-models/*.pkl
-models/*.json
+# Models (if large - commented out to allow upload)
+# models/
 
-# Results (optional)
-results/*.png
-results/*.csv
+# Results (commented out to allow upload)
+# results/

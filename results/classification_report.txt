@@ -1,0 +1,11 @@
+              precision    recall  f1-score   support
+
+        auto       0.66      0.76      0.70        25
+        bike       0.88      0.72      0.79        29
+         bus       0.73      0.92      0.81        12
+         car       0.81      0.81      0.81        26
+       truck       0.92      0.86      0.89        28
+
+    accuracy                           0.80       120
+   macro avg       0.80      0.81      0.80       120
+weighted avg       0.81      0.80      0.80       120
