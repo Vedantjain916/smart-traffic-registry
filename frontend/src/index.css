@@ -1,0 +1,342 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  margin: 0;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Mode Toggle Styles */
+.mode-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.mode-toggle {
+  display: flex;
+  background: rgba(255,255,255,0.2);
+  padding: 6px;
+  border-radius: 14px;
+  gap: 6px;
+}
+
+.mode-toggle button {
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;
+  background: transparent;
+  color: rgba(255,255,255,0.8);
+  box-shadow: none;
+}
+
+.mode-toggle button.active {
+  background: white;
+  color: #667eea;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.mode-toggle button:hover:not(.active) {
+  transform: none;
+  color: white;
+}
+
+.card {
+  background: white;
+  padding: 45px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card.iot-card {
+  max-width: 900px;
+  text-align: left;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin: 0 0 12px;
+  color: #1a202c;
+}
+
+.card p {
+  color: #718096;
+  margin: 0 0 30px;
+  font-size: 1rem;
+}
+
+.file-upload-wrapper {
+  border: 2px dashed #cbd5e0;
+  border-radius: 12px;
+  padding: 30px 20px;
+  margin: 20px 0;
+  background: #f7fafc;
+  transition: all 0.3s ease;
+}
+
+.file-upload-wrapper:hover {
+  border-color: #667eea;
+  background: #edf2f7;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-label {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #edf2f7;
+  color: #2d3748;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.file-label:hover {
+  background: #e2e8f0;
+}
+
+.file-name {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #4a5568;
+  word-break: break-all;
+}
+
+.mode-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.mode-buttons button {
+  flex: 1;
+}
+
+button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button.recording {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.error {
+  color: #e53e3e;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.result-box {
+  margin-top: 35px;
+  padding: 30px;
+  background: linear-gradient(135deg, #f6f8ff 0%, #f0f4ff 100%);
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.prediction {
+  color: #667eea;
+  margin: 0 0 15px;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.confidence {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin: 0 0 25px;
+}
+
+.top-3 {
+  text-align: left;
+  margin-top: 25px;
+  color: #2d3748;
+}
+
+.top-3 h4 {
+  margin: 0 0 18px;
+  font-size: 1.1rem;
+  color: #1a202c;
+}
+
+.top-3-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.top-3-item:hover {
+  transform: translateX(5px);
+}
+
+.top-3-item .label {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.top-3-item .confidence {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* IoT Dashboard Styles */
+.iot-dashboard h2 {
+  text-align: center;
+}
+
+.iot-status {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.iot-status span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: #e6fffa;
+  color: #047857;
+  font-weight: 600;
+}
+
+.iot-status span::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.prediction-list {
+  margin-top: 24px;
+}
+
+.prediction-list-header {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px;
+  gap: 16px;
+  padding: 12px 16px;
+  background: #f7fafc;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 12px;
+}
+
+.prediction-item {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px;
+  gap: 16px;
+  padding: 16px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 10px;
+  transition: transform 0.2s;
+}
+
+.prediction-item:hover {
+  transform: translateX(5px);
+}
+
+.prediction-item .time {
+  color: #718096;
+}
+
+.prediction-item .vehicle {
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.prediction-item .conf {
+  text-align: right;
+  font-weight: 700;
+  color: #667eea;
+}

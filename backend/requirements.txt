@@ -1,0 +1,9 @@
+Flask
+flask_cors
+werkzeug
+joblib
+tensorflow_hub
+librosa
+numpy
+pandas
+xgboost

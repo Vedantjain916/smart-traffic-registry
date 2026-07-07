@@ -1,0 +1,68 @@
+# Virtual environment
+venv/
+env/
+ENV/
+*.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Node.js
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+frontend/.vite/
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data files (large files, not to be committed)
+raw_data/
+processed/wav_audio/
+processed/audio_features/
+processed/vibration_features/
+processed/datasets/final_audio_dataset.csv
+processed/datasets/final_audio_dataset.zip
+*.zip
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Models (if large)
+models/*.pkl
+models/*.json
+
+# Results (optional)
+results/*.png
+results/*.csv
